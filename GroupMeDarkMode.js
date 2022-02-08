@@ -1,5 +1,5 @@
 function makeDark() {
-	
+	jQuery("#app-loading").css("background-color", "#000")
     jQuery('*').each(function() { //For literally everything, check colors and set backgrounds
         if ( jQuery(this).css('background-color') == 'rgb(247, 247, 247)') jQuery(this).css('background-color', '#222'); //If this uses the default light background, use a darker background
         else if ( jQuery(this).css('background-color') == 'rgb(255, 255, 255)') jQuery(this).css('background-color', '#000000'); //If this uses a white background, use a black background
@@ -42,14 +42,33 @@ function makeDark() {
 	 jQuery(".message-composer").css("color", "#FFF") //Make the message composition box use white text
 }
 
-//Make an observer to have the above function run every time the DOM updates
-let DOMObserver = new MutationObserver(makeDark)
+//Check for the loading screen until we find it, then make it black
+function makeLoadingBlack() {
+	if (!jQuery) {
+		requestAnimationFrame(makeLoadingBlack)
+	}
+	let target = jQuery("#app-loading")
+	if (target.length > 0) {
+		target.css("background-color", "#000")
+	} else {
+		requestAnimationFrame(makeLoadingBlack)
+	}
+}
+requestAnimationFrame(makeLoadingBlack)
 
-// Select the node that will be observed for mutations
-const targetNode = document.getElementById('');
+jQuery(document).ready(() => {
+	
+	console.log("Done!")
 
-// Options for the observer (which mutations to observe)
-const config = { attributes: false, childList: true, subtree: true };
+	//Make an observer to have the above function run every time the DOM updates
+	let DOMObserver = new MutationObserver(makeDark)
 
-//Observe the whole body
-DOMObserver.observe(document.body, config)
+	// Select the node that will be observed for mutations
+	const targetNode = document.getElementById('');
+
+	// Options for the observer (which mutations to observe)
+	const config = { attributes: false, childList: true, subtree: true };
+
+	//Observe the whole body
+	DOMObserver.observe(document.body, config)
+})
