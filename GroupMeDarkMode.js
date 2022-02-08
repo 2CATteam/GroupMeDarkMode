@@ -1,4 +1,5 @@
 function makeDark() {
+	
     jQuery('*').each(function() {
         let shouldFilter = false
         if ( jQuery(this).css('background-color') == 'rgb(247, 247, 247)') jQuery(this).css('background-color', '#222');
@@ -31,7 +32,15 @@ function makeDark() {
     }).mouseleave(function() {
         jQuery(this).css("background-color", "#222")
     })
-    requestAnimationFrame(makeDark)
+	 jQuery(".message-composer").css("color", "#FFF")
 }
 
-requestAnimationFrame(makeDark)
+let DOMObserver = new MutationObserver(makeDark)
+
+// Select the node that will be observed for mutations
+const targetNode = document.getElementById('');
+
+// Options for the observer (which mutations to observe)
+const config = { attributes: false, childList: true, subtree: true };
+
+DOMObserver.observe(document.body, config)
