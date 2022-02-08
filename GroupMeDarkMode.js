@@ -1,7 +1,7 @@
 function makeDark() {
     jQuery('*').each(function() { //For literally everything, check colors and set backgrounds
         if ( jQuery(this).css('background-color') == 'rgb(247, 247, 247)') jQuery(this).css('background-color', '#222'); //If this uses the default light background, use a darker background
-		  if ( jQuery(this).css('background-color') == 'rgb(239, 239, 239)') jQuery(this).css('background-color', '#111'); //Message boxes when hovering the like button for some reason
+		  if ( jQuery(this).css('background-color') == 'rgb(239, 239, 239)') jQuery(this).css('background-color', '#222'); //Message boxes when hovering the like button for some reason
         else if ( jQuery(this).css('background-color') == 'rgb(255, 255, 255)') jQuery(this).css('background-color', '#000000'); //If this uses a white background, use a black background
         else if ( jQuery(this).css('background-color') == 'rgb(229, 241, 246)') jQuery(this).css('background-color', '#112'); //All of the following set the background color for messages you send for different themes
         else if ( jQuery(this).css('background-color') == 'rgb(246, 246, 229)') jQuery(this).css('background-color', '#221');
