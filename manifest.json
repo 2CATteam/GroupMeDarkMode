@@ -9,5 +9,13 @@
 	  "js": ["jquery.js", "GroupMeDarkMode.js"]
   }
   ],
-  "host_permissions": ["*://*.groupme.com/*"]
+  "host_permissions": ["*://*.groupme.com/*"],
+  "icons": {
+	  "128": "icons/Icon-128.png",
+	  "96": "icons/Icon-96.png",
+	  "64": "icons/Icon-64.png",
+	  "48": "icons/Icon-48.png",
+	  "32": "icons/Icon-32.png",
+	  "16": "icons/Icon-16.png"
+  }
 }
