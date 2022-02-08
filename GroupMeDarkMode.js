@@ -1,5 +1,4 @@
 function makeDark() {
-	jQuery("#app-loading").css("background-color", "#000")
     jQuery('*').each(function() { //For literally everything, check colors and set backgrounds
         if ( jQuery(this).css('background-color') == 'rgb(247, 247, 247)') jQuery(this).css('background-color', '#222'); //If this uses the default light background, use a darker background
         else if ( jQuery(this).css('background-color') == 'rgb(255, 255, 255)') jQuery(this).css('background-color', '#000000'); //If this uses a white background, use a black background
@@ -57,8 +56,6 @@ function makeLoadingBlack() {
 requestAnimationFrame(makeLoadingBlack)
 
 jQuery(document).ready(() => {
-	
-	console.log("Done!")
 
 	//Make an observer to have the above function run every time the DOM updates
 	let DOMObserver = new MutationObserver(makeDark)
