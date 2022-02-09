@@ -6,7 +6,7 @@
   "content_scripts": [
   {
 	  "matches": ["*://web.groupme.com/*", "*://beta.groupme.com/*", "*://app.groupme.com/*"],
-	  "js": ["jquery.js", "GroupMeDarkMode.js"],
+	  "js": ["GroupMeDarkMode.js"],
 	  "run_at": "document_start"
   }
   ],
