@@ -1,7 +1,7 @@
 {
   "name": "GroupMe Dark Mode",
   "description": "This extension adds a dark mode to the GroupMe web app",
-  "version": "1.0",
+  "version": "2.0",
   "manifest_version": 3,
   "content_scripts": [
   {
@@ -10,7 +10,7 @@
 	  "run_at": "document_start"
   }
   ],
-  "host_permissions": ["*://*.groupme.com/*"],
+  "host_permissions": ["*://web.groupme.com/*", "*://beta.groupme.com/*", "*://app.groupme.com/*"],
   "icons": {
 	  "128": "icons/Icon-128.png",
 	  "96": "icons/Icon-96.png",

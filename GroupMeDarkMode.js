@@ -10,8 +10,8 @@ function makeDark(changes) {
 function colorNode(node) {
 	if (!(node instanceof HTMLElement)) return
 	let style = window.getComputedStyle(node)
-	if (style.backgroundColor == 'rgb(247, 247, 247)') node.style.backgroundColor = "#111" //Set light grey background stuff to dark grey
-	else if (style.backgroundColor == 'rgb(239, 239, 239)') node.style.backgroundColor = "#111" //Same as above, but specifically for hovered likes
+	if (style.backgroundColor == 'rgb(247, 247, 247)') node.style.backgroundColor = "#222" //Set light grey background stuff to dark grey
+	else if (style.backgroundColor == 'rgb(239, 239, 239)') node.style.backgroundColor = "#222" //Same as above, but specifically for hovered likes
 	else if (style.backgroundColor == 'rgb(255, 255, 255)') node.style.backgroundColor = "#000" //Set everything with white background to black background
 	else if (style.backgroundColor == 'rgb(229, 241, 246)') node.style.backgroundColor = "#113" //This and the below are for your own messages for different themes
 	else if (style.backgroundColor == 'rgb(246, 246, 229)') node.style.backgroundColor = "#221"
@@ -40,7 +40,7 @@ function colorNode(node) {
 	
 	else if (node.classList.contains("message") && !node.style.backgroundColor) {
 		node.style.color = "#FFF"
-		node.style.backgroundColor = "#111"
+		node.style.backgroundColor = "#222"
 	} else if (node.classList.contains("message")) {
 		node.style.color = "#FFF"
 	}
@@ -53,7 +53,6 @@ function colorNode(node) {
 	
 	//Make chat title black if the chat header is themed
 	else if (node.classList.contains("chat-header") && style.backgroundImage.includes("assets/banners")) {
-		console.log("Header uses assets")
 		node.querySelectorAll("h1,h2,h3,h4,h5,h6").forEach(header => {
 			header.style.color = "#000"
 			header.style.display = "inline-block"
@@ -90,7 +89,7 @@ function makeChatBlack(e) {
 }
 
 function makeChatGrey(e) {
-	e.target.style.backgroundColor = "#111"
+	e.target.style.backgroundColor = "#222"
 }
 
 //Check for the loading screen until we find it, then make it black
